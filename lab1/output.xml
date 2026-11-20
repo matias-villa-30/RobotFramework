@@ -1,65 +1,314 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.2 (Python 3.14.3 on linux)" generated="2026-03-24T15:50:56.846857" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.2 (Python 3.14.3 on linux)" generated="2026-03-26T12:01:03.229759" rpa="false" schemaversion="5">
 <suite id="s1" name="Main" source="/home/arch_matias/metropolia/test_automation/lab1/main.robot">
-<test id="s1-t1" name="Test 3" line="50">
+<test id="s1-t1" name="Test 1" line="36">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Generating random names from Faker Library</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-26T12:01:03.344818" elapsed="0.000257"/>
+</kw>
+<kw name="Get Random Names">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-03-26T12:01:03.345789" level="INFO">${LIST} = []</msg>
+<var>${LIST}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-03-26T12:01:03.345601" elapsed="0.000213"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Name" owner="FakerLibrary">
+<msg time="2026-03-26T12:01:03.346308" level="INFO">${name} = Irmeli Salminen</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2026-03-26T12:01:03.346065" elapsed="0.000262"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${LIST}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-03-26T12:01:03.346388" elapsed="0.000140"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2026-03-26T12:01:03.346008" elapsed="0.000543"/>
+</iter>
+<iter>
+<kw name="Name" owner="FakerLibrary">
+<msg time="2026-03-26T12:01:03.346809" level="INFO">${name} = Jyrki Rautiainen</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2026-03-26T12:01:03.346659" elapsed="0.000165"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${LIST}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-03-26T12:01:03.346880" elapsed="0.000123"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2026-03-26T12:01:03.346613" elapsed="0.000422"/>
+</iter>
+<iter>
+<kw name="Name" owner="FakerLibrary">
+<msg time="2026-03-26T12:01:03.347381" level="INFO">${name} = Aada Peltola</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2026-03-26T12:01:03.347171" elapsed="0.000228"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${LIST}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-03-26T12:01:03.347467" elapsed="0.000118"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2026-03-26T12:01:03.347117" elapsed="0.000490"/>
+</iter>
+<iter>
+<kw name="Name" owner="FakerLibrary">
+<msg time="2026-03-26T12:01:03.347883" level="INFO">${name} = Arja Kulmala-Heikkilä</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2026-03-26T12:01:03.347709" elapsed="0.000192"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${LIST}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-03-26T12:01:03.347959" elapsed="0.000380"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2026-03-26T12:01:03.347664" elapsed="0.000783"/>
+</iter>
+<iter>
+<kw name="Name" owner="FakerLibrary">
+<msg time="2026-03-26T12:01:03.348805" level="INFO">${name} = Jukka Koskela</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2026-03-26T12:01:03.348640" elapsed="0.000185"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${LIST}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-03-26T12:01:03.348890" elapsed="0.000121"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2026-03-26T12:01:03.348587" elapsed="0.000447"/>
+</iter>
+<var>${i}</var>
+<value>${num_names}</value>
+<status status="PASS" start="2026-03-26T12:01:03.345868" elapsed="0.003187"/>
+</for>
+<return>
+<value>${LIST}</value>
+<status status="PASS" start="2026-03-26T12:01:03.349096" elapsed="0.000035"/>
+</return>
+<msg time="2026-03-26T12:01:03.349246" level="INFO">${LIST} = ['Irmeli Salminen', 'Jyrki Rautiainen', 'Aada Peltola', 'Arja Kulmala-Heikkilä', 'Jukka Koskela']</msg>
+<var>${LIST}</var>
+<arg>${number_names}</arg>
+<status status="PASS" start="2026-03-26T12:01:03.345337" elapsed="0.003928"/>
+</kw>
+<kw name="Remove File" owner="OperatingSystem">
+<msg time="2026-03-26T12:01:03.349549" level="INFO" html="true">File '&lt;a href="file:///home/arch_matias/metropolia/test_automation/lab1/file.txt"&gt;/home/arch_matias/metropolia/test_automation/lab1/file.txt&lt;/a&gt;' does not exist.</msg>
+<arg>${FILE_PATH}</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="PASS" start="2026-03-26T12:01:03.349401" elapsed="0.000187"/>
+</kw>
+<status status="PASS" start="2026-03-26T12:01:03.343927" elapsed="0.005759"/>
+</test>
+<test id="s1-t2" name="Test 2" line="41">
+<kw name="Get Random Names">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-03-26T12:01:03.350479" level="INFO">${LIST} = []</msg>
+<var>${LIST}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-03-26T12:01:03.350279" elapsed="0.000226"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Name" owner="FakerLibrary">
+<msg time="2026-03-26T12:01:03.350961" level="INFO">${name} = Jari Jaakkola</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2026-03-26T12:01:03.350763" elapsed="0.000218"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${LIST}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-03-26T12:01:03.351051" elapsed="0.000146"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2026-03-26T12:01:03.350700" elapsed="0.000520"/>
+</iter>
+<iter>
+<kw name="Name" owner="FakerLibrary">
+<msg time="2026-03-26T12:01:03.351515" level="INFO">${name} = Anne Mäkelä</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2026-03-26T12:01:03.351340" elapsed="0.000191"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${LIST}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-03-26T12:01:03.351585" elapsed="0.000110"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2026-03-26T12:01:03.351294" elapsed="0.000423"/>
+</iter>
+<iter>
+<kw name="Name" owner="FakerLibrary">
+<msg time="2026-03-26T12:01:03.351942" level="INFO">${name} = Sofia Turunen</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2026-03-26T12:01:03.351813" elapsed="0.000144"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${LIST}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-03-26T12:01:03.352011" elapsed="0.000097"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2026-03-26T12:01:03.351770" elapsed="0.000357"/>
+</iter>
+<iter>
+<kw name="Name" owner="FakerLibrary">
+<msg time="2026-03-26T12:01:03.352369" level="INFO">${name} = Kalevi Salonen</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2026-03-26T12:01:03.352216" elapsed="0.000169"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${LIST}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-03-26T12:01:03.352444" elapsed="0.000100"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2026-03-26T12:01:03.352176" elapsed="0.000389"/>
+</iter>
+<iter>
+<kw name="Name" owner="FakerLibrary">
+<msg time="2026-03-26T12:01:03.352779" level="INFO">${name} = Marjatta Saarela</msg>
+<var>${name}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2026-03-26T12:01:03.352660" elapsed="0.000137"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${LIST}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-03-26T12:01:03.352846" elapsed="0.000093"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2026-03-26T12:01:03.352619" elapsed="0.000339"/>
+</iter>
+<var>${i}</var>
+<value>${num_names}</value>
+<status status="PASS" start="2026-03-26T12:01:03.350554" elapsed="0.002436"/>
+</for>
+<return>
+<value>${LIST}</value>
+<status status="PASS" start="2026-03-26T12:01:03.353032" elapsed="0.000026"/>
+</return>
+<msg time="2026-03-26T12:01:03.353341" level="INFO">${LIST} = ['Jari Jaakkola', 'Anne Mäkelä', 'Sofia Turunen', 'Kalevi Salonen', 'Marjatta Saarela']</msg>
+<var>${LIST}</var>
+<arg>${number_names}</arg>
+<status status="PASS" start="2026-03-26T12:01:03.350088" elapsed="0.003275"/>
+</kw>
+<kw name="Get Selection From User" owner="Dialogs">
+<msg time="2026-03-26T12:01:06.065155" level="INFO">${selected} = Kalevi Salonen</msg>
+<var>${selected}</var>
+<arg>Choose a name</arg>
+<arg>@{LIST}</arg>
+<doc>Pauses execution and asks user to select a value.</doc>
+<status status="PASS" start="2026-03-26T12:01:03.353503" elapsed="2.711746"/>
+</kw>
+<kw name="Address" owner="FakerLibrary">
+<msg time="2026-03-26T12:01:06.065878" level="INFO">${address} = Elimäenkuja 1
+13478 Joroinen</msg>
+<var>${address}</var>
+<doc>:example: '791 Crist Parks, Sashabury, IL 86039-9874'</doc>
+<status status="PASS" start="2026-03-26T12:01:06.065528" elapsed="0.000382"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Found selected: ${selected}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-03-26T12:01:06.066069" elapsed="0.000404"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2026-03-26T12:01:06.066955" level="INFO" html="true">Appended to file '&lt;a href="file:///home/arch_matias/metropolia/test_automation/lab1/file.txt"&gt;/home/arch_matias/metropolia/test_automation/lab1/file.txt&lt;/a&gt;'.</msg>
+<arg>${FILE_PATH}</arg>
+<arg>${selected}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2026-03-26T12:01:06.066602" elapsed="0.000410"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2026-03-26T12:01:06.067412" level="INFO" html="true">Appended to file '&lt;a href="file:///home/arch_matias/metropolia/test_automation/lab1/file.txt"&gt;/home/arch_matias/metropolia/test_automation/lab1/file.txt&lt;/a&gt;'.</msg>
+<arg>${FILE_PATH}</arg>
+<arg>${address}\n</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2026-03-26T12:01:06.067145" elapsed="0.000318"/>
+</kw>
+<status status="PASS" start="2026-03-26T12:01:03.349829" elapsed="2.717773"/>
+</test>
+<test id="s1-t3" name="Test 3" line="50">
 <kw name="Get File" owner="OperatingSystem">
-<msg time="2026-03-24T15:50:56.956603" level="INFO" html="true">Getting file '&lt;a href="file:///home/arch_matias/metropolia/test_automation/lab1/file.txt"&gt;/home/arch_matias/metropolia/test_automation/lab1/file.txt&lt;/a&gt;'.</msg>
-<msg time="2026-03-24T15:50:56.956720" level="INFO">${content} = Kaarina Lindberg
-Yrjö-Koskisen kuja 5
-53871 Vihti
-Johanna Oikarinen
-Eljaksenpolku 9
-85501 Saltvik
+<msg time="2026-03-26T12:01:06.068213" level="INFO" html="true">Getting file '&lt;a href="file:///home/arch_matias/metropolia/test_automation/lab1/file.txt"&gt;/home/arch_matias/metropolia/test_automation/lab1/file.txt&lt;/a&gt;'.</msg>
+<msg time="2026-03-26T12:01:06.068371" level="INFO">${content} = Kalevi Salonen
+Elimäenkuja 1
+13478 Joroinen
 </msg>
 <var>${content}</var>
 <arg>${FILE_PATH}</arg>
 <doc>Returns the contents of a specified file.</doc>
-<status status="PASS" start="2026-03-24T15:50:56.956459" elapsed="0.000281"/>
+<status status="PASS" start="2026-03-26T12:01:06.068067" elapsed="0.000329"/>
 </kw>
 <kw name="Split To Lines" owner="String">
-<msg time="2026-03-24T15:50:56.956970" level="INFO">6 lines returned.</msg>
-<msg time="2026-03-24T15:50:56.957028" level="INFO">@{lines} = [ Kaarina Lindberg | Yrjö-Koskisen kuja 5 | 53871 Vihti | Johanna Oikarinen | Eljaksenpolku 9 | 85501 Saltvik ]</msg>
+<msg time="2026-03-26T12:01:06.068685" level="INFO">3 lines returned.</msg>
+<msg time="2026-03-26T12:01:06.068769" level="INFO">@{lines} = [ Kalevi Salonen | Elimäenkuja 1 | 13478 Joroinen ]</msg>
 <var>@{lines}</var>
 <arg>${content}</arg>
 <doc>Splits the given string to lines.</doc>
-<status status="PASS" start="2026-03-24T15:50:56.956860" elapsed="0.000182"/>
+<status status="PASS" start="2026-03-26T12:01:06.068544" elapsed="0.000246"/>
 </kw>
 <kw name="Get Length" owner="BuiltIn">
-<msg time="2026-03-24T15:50:56.957391" level="INFO">Length is 6.</msg>
-<msg time="2026-03-24T15:50:56.957440" level="INFO">${count} = 6</msg>
+<msg time="2026-03-26T12:01:06.069357" level="INFO">Length is 3.</msg>
+<msg time="2026-03-26T12:01:06.069432" level="INFO">${count} = 3</msg>
 <var>${count}</var>
 <arg>${lines}</arg>
 <doc>Returns and logs the length of the given item as an integer.</doc>
-<status status="PASS" start="2026-03-24T15:50:56.957125" elapsed="0.000328"/>
+<status status="PASS" start="2026-03-26T12:01:06.068904" elapsed="0.000548"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>File has ${count} lines</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-03-24T15:50:56.957538" elapsed="0.000172"/>
+<status status="PASS" start="2026-03-26T12:01:06.069579" elapsed="0.000282"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-03-24T15:50:56.957917" level="INFO">Argument types are:
+<msg time="2026-03-26T12:01:06.070220" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<msg time="2026-03-24T15:50:56.957996" level="FAIL">6 != 3</msg>
 <arg>${count}</arg>
 <arg>3</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="FAIL" start="2026-03-24T15:50:56.957783" elapsed="0.000293">6 != 3</status>
+<status status="PASS" start="2026-03-26T12:01:06.069977" elapsed="0.000320"/>
 </kw>
-<status status="FAIL" start="2026-03-24T15:50:56.955735" elapsed="0.002464">6 != 3</status>
+<status status="PASS" start="2026-03-26T12:01:06.067795" elapsed="0.002622"/>
 </test>
 <doc>Exercise for testing keywords and libraries</doc>
-<status status="FAIL" start="2026-03-24T15:50:56.847335" elapsed="0.111091"/>
+<status status="PASS" start="2026-03-26T12:01:03.230328" elapsed="2.840483"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Main" id="s1" pass="0" fail="1" skip="0">Main</stat>
+<stat name="Main" id="s1" pass="3" fail="0" skip="0">Main</stat>
 </suite>
 </statistics>
 <errors>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.4 on linux)" generated="2026-04-24T15:38:38.947392" rpa="false" schemaversion="5">
+<suite id="s1" name="Car Dealer" source="/home/arch_matias/metropolia/test_automation/Lab7/car_dealer.robot">
+<test id="s1-t1" name="Take Initial Screenshot And Open Browser" line="17">
+<kw name="Start Container" type="SETUP">
+<kw name="Run Process" owner="Process">
+<msg time="2026-04-24T15:38:39.042305" level="INFO">Starting process:
+docker-compose up --detach</msg>
+<msg time="2026-04-24T15:38:39.042743" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-04-24T15:38:39.337550" level="INFO">Process completed.</msg>
+<arg>docker-compose</arg>
+<arg>up</arg>
+<arg>--detach</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-04-24T15:38:39.041991" elapsed="0.295714"/>
+</kw>
+<status status="PASS" start="2026-04-24T15:38:39.041393" elapsed="0.296483"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:39.338768" level="INFO">Opening browser 'Firefox' to base url 'http://localhost:3000'.</msg>
+<msg time="2026-04-24T15:38:49.396714" level="WARN">Problem reading geckodriver versions: error sending request for url (https://raw.githubusercontent.com/SeleniumHQ/selenium/trunk/common/geckodriver/geckodriver-support.json). Using latest geckodriver version</msg>
+<msg time="2026-04-24T15:38:49.397099" level="WARN">Exception managing firefox: error sending request for url (https://github.com/mozilla/geckodriver/releases/latest)</msg>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-24T15:38:39.338188" elapsed="11.955104"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:51.398781" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-04-24T15:38:51.293607" elapsed="0.105342"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:51.399670" level="INFO">Clicking link 'Add a car'.</msg>
+<arg>Add a car</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:51.399271" elapsed="0.119170"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:51.518993" level="INFO">Typing text 'Volvo' into text field 'make-input'.</msg>
+<arg>make-input</arg>
+<arg>Volvo</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:51.518727" elapsed="0.033455"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:51.552829" level="INFO">Typing text 'Xc60' into text field 'model-input'.</msg>
+<arg>model-input</arg>
+<arg>Xc60</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:51.552538" elapsed="0.107297"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:51.660462" level="INFO">Typing text '12500' into text field 'mileage-input'.</msg>
+<arg>mileage-input</arg>
+<arg>12500</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:51.660165" elapsed="0.014125"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:51.674799" level="INFO">Typing text '2022' into text field 'year-input'.</msg>
+<arg>year-input</arg>
+<arg>2022</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:51.674567" elapsed="0.011359"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:51.686744" level="INFO">Typing text 'ABC-123' into text field 'plate-input'.</msg>
+<arg>plate-input</arg>
+<arg>ABC-123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:51.686189" elapsed="0.014777"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:51.701465" level="INFO">Clicking button 'Add a new car'.</msg>
+<arg>Add a new car</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:51.701238" elapsed="0.211807"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:51.913664" level="INFO">Clicking link 'Add a car'.</msg>
+<arg>Add a car</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:51.913393" elapsed="0.296830"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:52.210822" level="INFO">Typing text 'Ford' into text field 'make-input'.</msg>
+<arg>make-input</arg>
+<arg>Ford</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:52.210509" elapsed="0.165401"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:52.376372" level="INFO">Typing text 'Transit' into text field 'model-input'.</msg>
+<arg>model-input</arg>
+<arg>Transit</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:52.376158" elapsed="0.035001"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:52.411734" level="INFO">Typing text '22500' into text field 'mileage-input'.</msg>
+<arg>mileage-input</arg>
+<arg>22500</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:52.411450" elapsed="0.070541"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:52.482526" level="INFO">Typing text '2019' into text field 'year-input'.</msg>
+<arg>year-input</arg>
+<arg>2019</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:52.482259" elapsed="0.018166"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:52.500917" level="INFO">Typing text 'DEF-456' into text field 'plate-input'.</msg>
+<arg>plate-input</arg>
+<arg>DEF-456</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:52.500691" elapsed="0.026525"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:52.527728" level="INFO">Clicking button 'Add a new car'.</msg>
+<arg>Add a new car</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:52.527495" elapsed="0.069358"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:52.597763" level="INFO">Clicking link 'Add a car'.</msg>
+<arg>Add a car</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:52.597462" elapsed="0.039481"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:52.637657" level="INFO">Typing text 'Mercedes-Benz' into text field 'make-input'.</msg>
+<arg>make-input</arg>
+<arg>Mercedes-Benz</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:52.637354" elapsed="0.056781"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:52.694676" level="INFO">Typing text 'Vito' into text field 'model-input'.</msg>
+<arg>model-input</arg>
+<arg>Vito</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:52.694417" elapsed="0.107031"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:52.802270" level="INFO">Typing text '32500' into text field 'mileage-input'.</msg>
+<arg>mileage-input</arg>
+<arg>32500</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:52.801919" elapsed="0.038740"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:52.841221" level="INFO">Typing text '2017' into text field 'year-input'.</msg>
+<arg>year-input</arg>
+<arg>2017</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:52.840922" elapsed="0.010779"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:52.852182" level="INFO">Typing text 'GHI-789' into text field 'plate-input'.</msg>
+<arg>plate-input</arg>
+<arg>GHI-789</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:52.851959" elapsed="0.012305"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:52.864810" level="INFO">Clicking button 'Add a new car'.</msg>
+<arg>Add a new car</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-24T15:38:52.864559" elapsed="0.050949"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-04-24T15:38:52.944186" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-04-24T15:38:52.915819" elapsed="0.028488"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-04-24T15:38:52.944547" elapsed="0.536139"/>
+</kw>
+<kw name="Stop Container" type="TEARDOWN">
+<kw name="Run Process" owner="Process">
+<msg time="2026-04-24T15:38:53.481720" level="INFO">Starting process:
+docker-compose down</msg>
+<msg time="2026-04-24T15:38:53.482097" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-04-24T15:39:03.767226" level="INFO">Process completed.</msg>
+<arg>docker-compose</arg>
+<arg>down</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-04-24T15:38:53.481411" elapsed="10.285972"/>
+</kw>
+<kw name="Pause Execution" owner="Dialogs">
+<doc>Pauses execution until user clicks ``Ok`` button.</doc>
+<status status="PASS" start="2026-04-24T15:39:03.767577" elapsed="3.298345"/>
+</kw>
+<status status="PASS" start="2026-04-24T15:38:53.481101" elapsed="13.585007"/>
+</kw>
+<status status="PASS" start="2026-04-24T15:38:39.040866" elapsed="28.025358"/>
+</test>
+<doc>Car dealer website test</doc>
+<status status="PASS" start="2026-04-24T15:38:38.947883" elapsed="28.118836"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Car Dealer" id="s1" pass="1" fail="0" skip="0">Car Dealer</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-04-24T15:38:49.396714" level="WARN">Problem reading geckodriver versions: error sending request for url (https://raw.githubusercontent.com/SeleniumHQ/selenium/trunk/common/geckodriver/geckodriver-support.json). Using latest geckodriver version</msg>
+<msg time="2026-04-24T15:38:49.397099" level="WARN">Exception managing firefox: error sending request for url (https://github.com/mozilla/geckodriver/releases/latest)</msg>
+</errors>
+</robot>

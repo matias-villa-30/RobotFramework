@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.3 on linux)" generated="2026-04-13T12:37:08.313279" rpa="false" schemaversion="5">
+<suite id="s1" name="Fluke" source="/home/arch_matias/metropolia/test_automation/lab3/fluke.robot">
+<kw name="Connect To Fluke" owner="serial_lib" type="SETUP">
+<kw name="Send Command" owner="FlukeSerialCommand">
+<arg>CR</arg>
+<status status="PASS" start="2026-04-13T12:37:08.381204" elapsed="0.000665"/>
+</kw>
+<kw name="Ignore Response" owner="FlukeSerialCommand">
+<status status="PASS" start="2026-04-13T12:37:08.382194" elapsed="0.000183"/>
+</kw>
+<kw name="Send Command" owner="FlukeSerialCommand">
+<arg>IDENT</arg>
+<status status="PASS" start="2026-04-13T12:37:08.382477" elapsed="0.000246"/>
+</kw>
+<kw name="Read Coming" owner="FlukeSerialCommand">
+<msg time="2026-04-13T12:37:08.883290" level="INFO">${firmware_raw} = IDENTERROR</msg>
+<var>${firmware_raw}</var>
+<status status="PASS" start="2026-04-13T12:37:08.382820" elapsed="0.500561"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<msg time="2026-04-13T12:37:08.884742" level="FAIL">'IDENTERROR' does not contain 'PROSIM8'</msg>
+<arg>${firmware_raw}</arg>
+<arg>PROSIM8</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="FAIL" start="2026-04-13T12:37:08.883640" elapsed="0.001386">'IDENTERROR' does not contain 'PROSIM8'</status>
+</kw>
+<kw name="Split String" owner="String">
+<var>${parts}</var>
+<arg>${firmware_raw}</arg>
+<arg>separator=,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="NOT RUN" start="2026-04-13T12:37:08.885267" elapsed="0.000046"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${firmware}</var>
+<arg>${parts[1]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2026-04-13T12:37:08.885484" elapsed="0.000035"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${firmware}</arg>
+<arg>2.09.04</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2026-04-13T12:37:08.885667" elapsed="0.000032"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Firmware Version: ${firmware}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-04-13T12:37:08.885876" elapsed="0.000035"/>
+</kw>
+<kw name="Send Command" owner="FlukeSerialCommand">
+<arg>SN</arg>
+<status status="NOT RUN" start="2026-04-13T12:37:08.886045" elapsed="0.000038"/>
+</kw>
+<kw name="Read Coming" owner="FlukeSerialCommand">
+<var>${sn}</var>
+<status status="NOT RUN" start="2026-04-13T12:37:08.886218" elapsed="0.000030"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${sn}</arg>
+<arg>6494021</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" start="2026-04-13T12:37:08.886373" elapsed="0.000031"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Serial Number: ${sn}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-04-13T12:37:08.886531" elapsed="0.000032"/>
+</kw>
+<status status="FAIL" start="2026-04-13T12:37:08.380825" elapsed="0.505945">'IDENTERROR' does not contain 'PROSIM8'</status>
+</kw>
+<test id="s1-t1" name="Test-Adult-HR60-T36.5-S5" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.886950" elapsed="0.001560">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t2" name="Test-Adult-HR60-T36.5-S10" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.888958" elapsed="0.001275">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t3" name="Test-Adult-HR60-T36.5-S15" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.890562" elapsed="0.001158">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t4" name="Test-Adult-HR60-T36.5-S20" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.892021" elapsed="0.001089">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t5" name="Test-Adult-HR60-T37.2-S5" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.893381" elapsed="0.001086">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t6" name="Test-Adult-HR60-T37.2-S10" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.894733" elapsed="0.001178">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t7" name="Test-Adult-HR60-T37.2-S15" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.896211" elapsed="0.001088">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t8" name="Test-Adult-HR60-T37.2-S20" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.897560" elapsed="0.001028">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t9" name="Test-Adult-HR60-T37.8-S5" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.898832" elapsed="0.001039">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t10" name="Test-Adult-HR60-T37.8-S10" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.900136" elapsed="0.001098">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t11" name="Test-Adult-HR60-T37.8-S15" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.901537" elapsed="0.001102">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t12" name="Test-Adult-HR60-T37.8-S20" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.902802" elapsed="0.000640">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t13" name="Test-Adult-HR60-T38.5-S5" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.903603" elapsed="0.000601">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t14" name="Test-Adult-HR60-T38.5-S10" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.904338" elapsed="0.000548">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t15" name="Test-Adult-HR60-T38.5-S15" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.905024" elapsed="0.000555">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t16" name="Test-Adult-HR60-T38.5-S20" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.905717" elapsed="0.000809">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t17" name="Test-Adult-HR80-T36.5-S5" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.906698" elapsed="0.000606">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t18" name="Test-Adult-HR80-T36.5-S10" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.907468" elapsed="0.000994">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t19" name="Test-Adult-HR80-T36.5-S15" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.908735" elapsed="0.000882">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t20" name="Test-Adult-HR80-T36.5-S20" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.909774" elapsed="0.000611">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t21" name="Test-Adult-HR80-T37.2-S5" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.910554" elapsed="0.000626">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t22" name="Test-Adult-HR80-T37.2-S10" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.911331" elapsed="0.000594">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t23" name="Test-Adult-HR80-T37.2-S15" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.912075" elapsed="0.000594">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t24" name="Test-Adult-HR80-T37.2-S20" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.912815" elapsed="0.000559">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t25" name="Test-Adult-HR80-T37.8-S5" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.913516" elapsed="0.000567">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t26" name="Test-Adult-HR80-T37.8-S10" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.914221" elapsed="0.000531">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t27" name="Test-Adult-HR80-T37.8-S15" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.914883" elapsed="0.000499">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t28" name="Test-Adult-HR80-T37.8-S20" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.915505" elapsed="0.000511">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t29" name="Test-Adult-HR80-T38.5-S5" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.916328" elapsed="0.000942">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t30" name="Test-Adult-HR80-T38.5-S10" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.917453" elapsed="0.000720">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t31" name="Test-Adult-HR80-T38.5-S15" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.918350" elapsed="0.000609">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t32" name="Test-Adult-HR80-T38.5-S20" line="17">
+<tag>Adult</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.919112" elapsed="0.000687">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t33" name="Test-Adult-HR110-T36.5-S5" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.919977" elapsed="0.000656">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t34" name="Test-Adult-HR110-T36.5-S10" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.920811" elapsed="0.000671">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t35" name="Test-Adult-HR110-T36.5-S15" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.921614" elapsed="0.000536">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t36" name="Test-Adult-HR110-T36.5-S20" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.922278" elapsed="0.000544">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t37" name="Test-Adult-HR110-T37.2-S5" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.923135" elapsed="0.000755">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t38" name="Test-Adult-HR110-T37.2-S10" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.924068" elapsed="0.000614">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t39" name="Test-Adult-HR110-T37.2-S15" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.924836" elapsed="0.000558">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t40" name="Test-Adult-HR110-T37.2-S20" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.925524" elapsed="0.000739">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t41" name="Test-Adult-HR110-T37.8-S5" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.926427" elapsed="0.000592">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t42" name="Test-Adult-HR110-T37.8-S10" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.927156" elapsed="0.000534">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t43" name="Test-Adult-HR110-T37.8-S15" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.927816" elapsed="0.000503">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t44" name="Test-Adult-HR110-T37.8-S20" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.928442" elapsed="0.000547">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t45" name="Test-Adult-HR110-T38.5-S5" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.929117" elapsed="0.000515">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t46" name="Test-Adult-HR110-T38.5-S10" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.929756" elapsed="0.000552">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t47" name="Test-Adult-HR110-T38.5-S15" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.930440" elapsed="0.000556">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t48" name="Test-Adult-HR110-T38.5-S20" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.931127" elapsed="0.000531">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t49" name="Test-Adult-HR130-T36.5-S5" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.931790" elapsed="0.000546">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t50" name="Test-Adult-HR130-T36.5-S10" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.932472" elapsed="0.000982">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t51" name="Test-Adult-HR130-T36.5-S15" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.933659" elapsed="0.000736">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t52" name="Test-Adult-HR130-T36.5-S20" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.934569" elapsed="0.000776">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t53" name="Test-Adult-HR130-T37.2-S5" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.935553" elapsed="0.000769">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t54" name="Test-Adult-HR130-T37.2-S10" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.936503" elapsed="0.000698">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t55" name="Test-Adult-HR130-T37.2-S15" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.937369" elapsed="0.000616">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t56" name="Test-Adult-HR130-T37.2-S20" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.938126" elapsed="0.000572">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t57" name="Test-Adult-HR130-T37.8-S5" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.938860" elapsed="0.000588">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t58" name="Test-Adult-HR130-T37.8-S10" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.939590" elapsed="0.000707">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t59" name="Test-Adult-HR130-T37.8-S15" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.940435" elapsed="0.001048">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t60" name="Test-Adult-HR130-T37.8-S20" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.941674" elapsed="0.000785">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t61" name="Test-Adult-HR130-T38.5-S5" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.942618" elapsed="0.000622">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t62" name="Test-Adult-HR130-T38.5-S10" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.943392" elapsed="0.000619">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t63" name="Test-Adult-HR130-T38.5-S15" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.944161" elapsed="0.000666">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t64" name="Test-Adult-HR130-T38.5-S20" line="17">
+<tag>Adult</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.945003" elapsed="0.000641">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t65" name="Test-Child-HR60-T36.5-S5" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.945863" elapsed="0.000677">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t66" name="Test-Child-HR60-T36.5-S10" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.946672" elapsed="0.000538">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t67" name="Test-Child-HR60-T36.5-S15" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.947338" elapsed="0.000500">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t68" name="Test-Child-HR60-T36.5-S20" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.947969" elapsed="0.000489">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t69" name="Test-Child-HR60-T37.2-S5" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.948580" elapsed="0.000514">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t70" name="Test-Child-HR60-T37.2-S10" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.949221" elapsed="0.000949">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t71" name="Test-Child-HR60-T37.2-S15" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.950347" elapsed="0.000717">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t72" name="Test-Child-HR60-T37.2-S20" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.951251" elapsed="0.000716">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t73" name="Test-Child-HR60-T37.8-S5" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.952149" elapsed="0.000717">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t74" name="Test-Child-HR60-T37.8-S10" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.953027" elapsed="0.000643">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t75" name="Test-Child-HR60-T37.8-S15" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.953839" elapsed="0.000667">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t76" name="Test-Child-HR60-T37.8-S20" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.954677" elapsed="0.000687">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t77" name="Test-Child-HR60-T38.5-S5" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.955527" elapsed="0.000709">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t78" name="Test-Child-HR60-T38.5-S10" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.956358" elapsed="0.000583">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t79" name="Test-Child-HR60-T38.5-S15" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.957185" elapsed="0.000613">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t80" name="Test-Child-HR60-T38.5-S20" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.957958" elapsed="0.000582">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t81" name="Test-Child-HR80-T36.5-S5" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.958660" elapsed="0.000502">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t82" name="Test-Child-HR80-T36.5-S10" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.959288" elapsed="0.000508">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t83" name="Test-Child-HR80-T36.5-S15" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.959921" elapsed="0.000496">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t84" name="Test-Child-HR80-T36.5-S20" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.960540" elapsed="0.000495">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t85" name="Test-Child-HR80-T37.2-S5" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.961175" elapsed="0.000533">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t86" name="Test-Child-HR80-T37.2-S10" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.961850" elapsed="0.000530">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t87" name="Test-Child-HR80-T37.2-S15" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.962511" elapsed="0.000495">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t88" name="Test-Child-HR80-T37.2-S20" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.963122" elapsed="0.000481">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t89" name="Test-Child-HR80-T37.8-S5" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.963726" elapsed="0.000507">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t90" name="Test-Child-HR80-T37.8-S10" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.964351" elapsed="0.000481">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t91" name="Test-Child-HR80-T37.8-S15" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.964949" elapsed="0.000507">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t92" name="Test-Child-HR80-T37.8-S20" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.965592" elapsed="0.000584">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t93" name="Test-Child-HR80-T38.5-S5" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.966552" elapsed="0.000903">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t94" name="Test-Child-HR80-T38.5-S10" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.967630" elapsed="0.000736">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t95" name="Test-Child-HR80-T38.5-S15" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.968541" elapsed="0.000741">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t96" name="Test-Child-HR80-T38.5-S20" line="17">
+<tag>Child</tag>
+<tag>Low</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.969460" elapsed="0.000839">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t97" name="Test-Child-HR110-T36.5-S5" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.970475" elapsed="0.000688">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t98" name="Test-Child-HR110-T36.5-S10" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.971329" elapsed="0.000654">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t99" name="Test-Child-HR110-T36.5-S15" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.972143" elapsed="0.000610">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t100" name="Test-Child-HR110-T36.5-S20" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.972938" elapsed="0.000576">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t101" name="Test-Child-HR110-T37.2-S5" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.973656" elapsed="0.000612">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t102" name="Test-Child-HR110-T37.2-S10" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.974413" elapsed="0.000748">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t103" name="Test-Child-HR110-T37.2-S15" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.975348" elapsed="0.000638">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t104" name="Test-Child-HR110-T37.2-S20" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.976137" elapsed="0.000634">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t105" name="Test-Child-HR110-T37.8-S5" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.976923" elapsed="0.000570">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t106" name="Test-Child-HR110-T37.8-S10" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.977630" elapsed="0.000584">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t107" name="Test-Child-HR110-T37.8-S15" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.978344" elapsed="0.000492">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t108" name="Test-Child-HR110-T37.8-S20" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.978957" elapsed="0.000586">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t109" name="Test-Child-HR110-T38.5-S5" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.979693" elapsed="0.000634">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t110" name="Test-Child-HR110-T38.5-S10" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.980463" elapsed="0.000543">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t111" name="Test-Child-HR110-T38.5-S15" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.981141" elapsed="0.000524">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t112" name="Test-Child-HR110-T38.5-S20" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.981807" elapsed="0.000551">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t113" name="Test-Child-HR130-T36.5-S5" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.982498" elapsed="0.000926">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t114" name="Test-Child-HR130-T36.5-S10" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.983616" elapsed="0.000678">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t115" name="Test-Child-HR130-T36.5-S15" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.984467" elapsed="0.000709">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t116" name="Test-Child-HR130-T36.5-S20" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.985332" elapsed="0.000620">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t117" name="Test-Child-HR130-T37.2-S5" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.986127" elapsed="0.000760">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t118" name="Test-Child-HR130-T37.2-S10" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.987078" elapsed="0.000772">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t119" name="Test-Child-HR130-T37.2-S15" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.988039" elapsed="0.000730">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t120" name="Test-Child-HR130-T37.2-S20" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.988943" elapsed="0.000732">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t121" name="Test-Child-HR130-T37.8-S5" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.989909" elapsed="0.000865">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t122" name="Test-Child-HR130-T37.8-S10" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.990934" elapsed="0.000584">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t123" name="Test-Child-HR130-T37.8-S15" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.991659" elapsed="0.000561">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t124" name="Test-Child-HR130-T37.8-S20" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.992361" elapsed="0.000559">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t125" name="Test-Child-HR130-T38.5-S5" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.993057" elapsed="0.000506">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t126" name="Test-Child-HR130-T38.5-S10" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.993683" elapsed="0.000510">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t127" name="Test-Child-HR130-T38.5-S15" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.994328" elapsed="0.000523">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<test id="s1-t128" name="Test-Child-HR130-T38.5-S20" line="17">
+<tag>Child</tag>
+<tag>High</tag>
+<status status="FAIL" start="2026-04-13T12:37:08.994967" elapsed="0.000477">Parent suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</test>
+<kw name="Set To Local Mode" owner="serial_lib" type="TEARDOWN">
+<kw name="Send Command" owner="FlukeSerialCommand">
+<arg>LOCAL</arg>
+<status status="PASS" start="2026-04-13T12:37:08.996083" elapsed="0.000283"/>
+</kw>
+<kw name="Read Coming" owner="FlukeSerialCommand">
+<msg time="2026-04-13T12:37:09.496983" level="INFO">${resp} = LOCALERROR</msg>
+<var>${resp}</var>
+<status status="PASS" start="2026-04-13T12:37:08.996458" elapsed="0.500612"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\nDEBUG: Local Response was: ${resp}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-04-13T12:37:09.497353" elapsed="0.000757"/>
+</kw>
+<doc>Sets the device to local mode and ignores 'already local' errors.</doc>
+<status status="PASS" start="2026-04-13T12:37:08.995908" elapsed="0.502349"/>
+</kw>
+<doc>Lab 3</doc>
+<status status="FAIL" start="2026-04-13T12:37:08.313887" elapsed="1.184440">Suite setup failed:
+'IDENTERROR' does not contain 'PROSIM8'</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="128" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="64" skip="0">Adult</stat>
+<stat pass="0" fail="64" skip="0">Child</stat>
+<stat pass="0" fail="64" skip="0">High</stat>
+<stat pass="0" fail="64" skip="0">Low</stat>
+</tag>
+<suite>
+<stat name="Fluke" id="s1" pass="0" fail="128" skip="0">Fluke</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,44 @@
+pipeline {
+    agent {
+        label 'pico-build'
+    }
+
+    stages {
+
+        stage('Build') {
+            steps {
+                sh 'docker compose up'
+            }
+        }
+
+        stage('Program & Test') {
+            steps {
+
+                sh '''
+                    openocd \
+                    -s /usr/share/openocd/scripts \
+                    -f interface/cmsis-dap.cfg \
+                    -f target/rp2040.cfg \
+                    -c "adapter speed 4000" \
+                    -c "tcl_port disabled" \
+                    -c "gdb_port disabled" \
+                    -c "program pico-build-docker/cmake-build-debug/atcmd.elf verify reset exit" \
+                    -c shutdown
+                '''
+
+                sleep 10
+
+                sh '''
+                    source /home/arch_matias/metropolia/test_automation/Lab5/serie/bin/activate
+                    robot -d results -v SERIAL_PORT:/dev/ttyACM0 RobotFramework/at_test.robot
+                '''
+            }
+        }
+    }
+
+    post {
+        always {
+            sh 'docker compose down || true'
+        }
+    }
+}

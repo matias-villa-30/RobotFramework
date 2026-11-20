@@ -1,0 +1,2 @@
+curl http://jenkins:8080/jenkins/git/notifyCommit?url=<strong><http://gogs:3000/lag04/Lab5></strong>
+

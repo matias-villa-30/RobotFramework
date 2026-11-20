@@ -1,0 +1,34 @@
+The function code field of a MODBUS data unit is coded in one byte. Valid codes are in the
+range of 1 ... 255 decimal (the range 128 – 255 is reserved and used for exception
+responses)
+
+
+Function code "0" (zero) is not valid
+
+The function code alone specifies the action that the server will execute.
+
+MODBUS uses a ‘big-Endian’ representation for addresses and data items. This means
+that when a numerical quantity larger than a single byte is transmitted, the most significant
+byte is sent first. So for example
+
+Register size     value
+_____________     _____
+16 - bits         0x1234 the first byte sent is 0x12 then 0x34
+
+
+============================================
+============================================
+Device address is: 17
+
+The supported function codes are:
+
+• 3 – read holding registers
+• 4 – read input registers
+• 6 – write holding register
+• 16 – write multiple holding registers
+
+Valid register address ranges:
+• Holding registers: 10 – 20 (inclusive)
+• Input registers: 1 – 9 (inclusive)
+============================================
+============================================

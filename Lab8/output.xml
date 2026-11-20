@@ -1,0 +1,956 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.4 on linux)" generated="2026-04-28T10:47:13.662565" rpa="false" schemaversion="5">
+<suite id="s1" name="Part 2" source="/home/arch_matias/metropolia/test_automation/Lab8/part_2.robot">
+<kw name="Start Container" type="SETUP">
+<kw name="Run Process" owner="Process">
+<msg time="2026-04-28T10:47:13.769597" level="INFO">Starting process:
+docker-compose up --detach</msg>
+<msg time="2026-04-28T10:47:13.769934" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-04-28T10:47:13.960252" level="INFO">Process completed.</msg>
+<arg>docker-compose</arg>
+<arg>up</arg>
+<arg>--detach</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-04-28T10:47:13.769331" elapsed="0.191031"/>
+</kw>
+<status status="PASS" start="2026-04-28T10:47:13.768799" elapsed="0.191678"/>
+</kw>
+<test id="s1-t1" name="Test Add Ten Random Cars" line="20">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:13.961134" level="INFO">Opening browser 'Firefox' to base url 'http://localhost:3000'.</msg>
+<msg time="2026-04-28T10:47:24.003324" level="WARN">Problem reading geckodriver versions: error sending request for url (https://raw.githubusercontent.com/SeleniumHQ/selenium/trunk/common/geckodriver/geckodriver-support.json). Using latest geckodriver version</msg>
+<msg time="2026-04-28T10:47:24.003501" level="WARN">Exception managing firefox: error sending request for url (https://github.com/mozilla/geckodriver/releases/latest)</msg>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-04-28T10:47:13.960922" elapsed="11.633953"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-04-28T10:47:25.595633" level="INFO">${LIST} = []</msg>
+<var>${LIST}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-04-28T10:47:25.595263" elapsed="0.000400"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:25.596464" level="INFO">Clicking link 'Add a car'.</msg>
+<arg>Add a car</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:25.596160" elapsed="0.240124"/>
+</kw>
+<kw name="Generate Test2 Brand" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:25.836712" level="INFO">${brand} = Skoda</msg>
+<var>${brand}</var>
+<status status="PASS" start="2026-04-28T10:47:25.836493" elapsed="0.000243"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${LIST}</arg>
+<arg>${brand}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-04-28T10:47:25.836819" elapsed="0.000232"/>
+</kw>
+<kw name="Generate Test2 Model" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:25.837235" level="INFO">${model} = Octavia</msg>
+<var>${model}</var>
+<status status="PASS" start="2026-04-28T10:47:25.837133" elapsed="0.000122"/>
+</kw>
+<kw name="Generate Mileage" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:25.837401" level="INFO">${mileage} = 135367</msg>
+<var>${mileage}</var>
+<status status="PASS" start="2026-04-28T10:47:25.837321" elapsed="0.000097"/>
+</kw>
+<kw name="Generate Year" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:25.837551" level="INFO">${year} = 2012</msg>
+<var>${year}</var>
+<status status="PASS" start="2026-04-28T10:47:25.837476" elapsed="0.000092"/>
+</kw>
+<kw name="Generate Plate" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:25.837710" level="INFO">${plate} = ZYH-237</msg>
+<var>${plate}</var>
+<status status="PASS" start="2026-04-28T10:47:25.837626" elapsed="0.000102"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:25.837992" level="INFO">Typing text 'Skoda' into text field 'make-input'.</msg>
+<arg>make-input</arg>
+<arg>${brand}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:25.837802" elapsed="0.191960"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.030178" level="INFO">Typing text 'Octavia' into text field 'model-input'.</msg>
+<arg>model-input</arg>
+<arg>${model}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.029954" elapsed="0.031842"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.062205" level="INFO">Typing text '135367' into text field 'mileage-input'.</msg>
+<arg>mileage-input</arg>
+<arg>${mileage}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.061970" elapsed="0.050105"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.112492" level="INFO">Typing text '2012' into text field 'year-input'.</msg>
+<arg>year-input</arg>
+<arg>${year}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.112246" elapsed="0.016114"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.128820" level="INFO">Typing text 'ZYH-237' into text field 'plate-input'.</msg>
+<arg>plate-input</arg>
+<arg>${plate}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.128555" elapsed="0.017686"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.146998" level="INFO">Clicking button 'Add a new car'.</msg>
+<arg>Add a new car</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.146555" elapsed="0.089408"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2026-04-28T10:47:25.596049" elapsed="0.639998"/>
+</iter>
+<iter>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.236521" level="INFO">Clicking link 'Add a car'.</msg>
+<arg>Add a car</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.236336" elapsed="0.122962"/>
+</kw>
+<kw name="Generate Test2 Brand" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:26.359607" level="INFO">${brand} = Toyota</msg>
+<var>${brand}</var>
+<status status="PASS" start="2026-04-28T10:47:26.359461" elapsed="0.000168"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${LIST}</arg>
+<arg>${brand}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.359702" elapsed="0.000149"/>
+</kw>
+<kw name="Generate Test2 Model" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:26.360013" level="INFO">${model} = A4</msg>
+<var>${model}</var>
+<status status="PASS" start="2026-04-28T10:47:26.359932" elapsed="0.000098"/>
+</kw>
+<kw name="Generate Mileage" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:26.360162" level="INFO">${mileage} = 287457</msg>
+<var>${mileage}</var>
+<status status="PASS" start="2026-04-28T10:47:26.360090" elapsed="0.000088"/>
+</kw>
+<kw name="Generate Year" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:26.360307" level="INFO">${year} = 1997</msg>
+<var>${year}</var>
+<status status="PASS" start="2026-04-28T10:47:26.360234" elapsed="0.000090"/>
+</kw>
+<kw name="Generate Plate" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:26.360454" level="INFO">${plate} = VWF-543</msg>
+<var>${plate}</var>
+<status status="PASS" start="2026-04-28T10:47:26.360377" elapsed="0.000093"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.360666" level="INFO">Typing text 'Toyota' into text field 'make-input'.</msg>
+<arg>make-input</arg>
+<arg>${brand}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.360536" elapsed="0.083813"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.444793" level="INFO">Typing text 'A4' into text field 'model-input'.</msg>
+<arg>model-input</arg>
+<arg>${model}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.444542" elapsed="0.027461"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.472479" level="INFO">Typing text '287457' into text field 'mileage-input'.</msg>
+<arg>mileage-input</arg>
+<arg>${mileage}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.472246" elapsed="0.007265"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.480117" level="INFO">Typing text '1997' into text field 'year-input'.</msg>
+<arg>year-input</arg>
+<arg>${year}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.479729" elapsed="0.027378"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.507527" level="INFO">Typing text 'VWF-543' into text field 'plate-input'.</msg>
+<arg>plate-input</arg>
+<arg>${plate}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.507302" elapsed="0.013329"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.521066" level="INFO">Clicking button 'Add a new car'.</msg>
+<arg>Add a new car</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.520843" elapsed="0.044242"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2026-04-28T10:47:26.236225" elapsed="0.328943"/>
+</iter>
+<iter>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.565592" level="INFO">Clicking link 'Add a car'.</msg>
+<arg>Add a car</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.565433" elapsed="0.115036"/>
+</kw>
+<kw name="Generate Test2 Brand" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:26.680970" level="INFO">${brand} = Toyota</msg>
+<var>${brand}</var>
+<status status="PASS" start="2026-04-28T10:47:26.680743" elapsed="0.000264"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${LIST}</arg>
+<arg>${brand}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.681134" elapsed="0.000247"/>
+</kw>
+<kw name="Generate Test2 Model" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:26.681635" level="INFO">${model} = Octavia</msg>
+<var>${model}</var>
+<status status="PASS" start="2026-04-28T10:47:26.681501" elapsed="0.000173"/>
+</kw>
+<kw name="Generate Mileage" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:26.681897" level="INFO">${mileage} = 177584</msg>
+<var>${mileage}</var>
+<status status="PASS" start="2026-04-28T10:47:26.681768" elapsed="0.000155"/>
+</kw>
+<kw name="Generate Year" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:26.682121" level="INFO">${year} = 2014</msg>
+<var>${year}</var>
+<status status="PASS" start="2026-04-28T10:47:26.682015" elapsed="0.000133"/>
+</kw>
+<kw name="Generate Plate" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:26.682344" level="INFO">${plate} = OWH-460</msg>
+<var>${plate}</var>
+<status status="PASS" start="2026-04-28T10:47:26.682234" elapsed="0.000133"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.682647" level="INFO">Typing text 'Toyota' into text field 'make-input'.</msg>
+<arg>make-input</arg>
+<arg>${brand}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.682463" elapsed="0.056368"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.739233" level="INFO">Typing text 'Octavia' into text field 'model-input'.</msg>
+<arg>model-input</arg>
+<arg>${model}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.739018" elapsed="0.007488"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.746930" level="INFO">Typing text '177584' into text field 'mileage-input'.</msg>
+<arg>mileage-input</arg>
+<arg>${mileage}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.746688" elapsed="0.007002"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.754063" level="INFO">Typing text '2014' into text field 'year-input'.</msg>
+<arg>year-input</arg>
+<arg>${year}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.753849" elapsed="0.007167"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.761379" level="INFO">Typing text 'OWH-460' into text field 'plate-input'.</msg>
+<arg>plate-input</arg>
+<arg>${plate}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.761182" elapsed="0.006369"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.767867" level="INFO">Clicking button 'Add a new car'.</msg>
+<arg>Add a new car</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.767708" elapsed="0.037638"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2026-04-28T10:47:26.565329" elapsed="0.240127"/>
+</iter>
+<iter>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.806043" level="INFO">Clicking link 'Add a car'.</msg>
+<arg>Add a car</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.805810" elapsed="0.107780"/>
+</kw>
+<kw name="Generate Test2 Brand" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:26.913994" level="INFO">${brand} = Skoda</msg>
+<var>${brand}</var>
+<status status="PASS" start="2026-04-28T10:47:26.913794" elapsed="0.000229"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${LIST}</arg>
+<arg>${brand}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.914123" elapsed="0.000183"/>
+</kw>
+<kw name="Generate Test2 Model" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:26.914480" level="INFO">${model} = A4</msg>
+<var>${model}</var>
+<status status="PASS" start="2026-04-28T10:47:26.914397" elapsed="0.000106"/>
+</kw>
+<kw name="Generate Mileage" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:26.914649" level="INFO">${mileage} = 130790</msg>
+<var>${mileage}</var>
+<status status="PASS" start="2026-04-28T10:47:26.914569" elapsed="0.000098"/>
+</kw>
+<kw name="Generate Year" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:26.914812" level="INFO">${year} = 2013</msg>
+<var>${year}</var>
+<status status="PASS" start="2026-04-28T10:47:26.914733" elapsed="0.000095"/>
+</kw>
+<kw name="Generate Plate" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:26.914986" level="INFO">${plate} = HWN-215</msg>
+<var>${plate}</var>
+<status status="PASS" start="2026-04-28T10:47:26.914904" elapsed="0.000101"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.915249" level="INFO">Typing text 'Skoda' into text field 'make-input'.</msg>
+<arg>make-input</arg>
+<arg>${brand}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.915081" elapsed="0.057346"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.972794" level="INFO">Typing text 'A4' into text field 'model-input'.</msg>
+<arg>model-input</arg>
+<arg>${model}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.972590" elapsed="0.006242"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.979240" level="INFO">Typing text '130790' into text field 'mileage-input'.</msg>
+<arg>mileage-input</arg>
+<arg>${mileage}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.979021" elapsed="0.007012"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.986610" level="INFO">Typing text '2013' into text field 'year-input'.</msg>
+<arg>year-input</arg>
+<arg>${year}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.986299" elapsed="0.007514"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.994197" level="INFO">Typing text 'HWN-215' into text field 'plate-input'.</msg>
+<arg>plate-input</arg>
+<arg>${plate}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.993984" elapsed="0.005479"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:26.999831" level="INFO">Clicking button 'Add a new car'.</msg>
+<arg>Add a new car</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:26.999656" elapsed="0.038098"/>
+</kw>
+<var name="${i}">3</var>
+<status status="PASS" start="2026-04-28T10:47:26.805669" elapsed="0.232175"/>
+</iter>
+<iter>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.038477" level="INFO">Clicking link 'Add a car'.</msg>
+<arg>Add a car</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.038277" elapsed="0.121286"/>
+</kw>
+<kw name="Generate Test2 Brand" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:27.159983" level="INFO">${brand} = Audi</msg>
+<var>${brand}</var>
+<status status="PASS" start="2026-04-28T10:47:27.159768" elapsed="0.000249"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${LIST}</arg>
+<arg>${brand}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.160141" elapsed="0.000237"/>
+</kw>
+<kw name="Generate Test2 Model" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:27.160638" level="INFO">${model} = A3</msg>
+<var>${model}</var>
+<status status="PASS" start="2026-04-28T10:47:27.160499" elapsed="0.000167"/>
+</kw>
+<kw name="Generate Mileage" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:27.160870" level="INFO">${mileage} = 269702</msg>
+<var>${mileage}</var>
+<status status="PASS" start="2026-04-28T10:47:27.160764" elapsed="0.000135"/>
+</kw>
+<kw name="Generate Year" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:27.161112" level="INFO">${year} = 2024</msg>
+<var>${year}</var>
+<status status="PASS" start="2026-04-28T10:47:27.160993" elapsed="0.000148"/>
+</kw>
+<kw name="Generate Plate" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:27.161367" level="INFO">${plate} = BQB-481</msg>
+<var>${plate}</var>
+<status status="PASS" start="2026-04-28T10:47:27.161231" elapsed="0.000162"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.161710" level="INFO">Typing text 'Audi' into text field 'make-input'.</msg>
+<arg>make-input</arg>
+<arg>${brand}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.161502" elapsed="0.073897"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.235755" level="INFO">Typing text 'A3' into text field 'model-input'.</msg>
+<arg>model-input</arg>
+<arg>${model}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.235557" elapsed="0.007239"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.243496" level="INFO">Typing text '269702' into text field 'mileage-input'.</msg>
+<arg>mileage-input</arg>
+<arg>${mileage}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.243249" elapsed="0.007541"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.251202" level="INFO">Typing text '2024' into text field 'year-input'.</msg>
+<arg>year-input</arg>
+<arg>${year}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.250972" elapsed="0.009218"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.260546" level="INFO">Typing text 'BQB-481' into text field 'plate-input'.</msg>
+<arg>plate-input</arg>
+<arg>${plate}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.260350" elapsed="0.006769"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.267435" level="INFO">Clicking button 'Add a new car'.</msg>
+<arg>Add a new car</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.267276" elapsed="0.037084"/>
+</kw>
+<var name="${i}">4</var>
+<status status="PASS" start="2026-04-28T10:47:27.038104" elapsed="0.266368"/>
+</iter>
+<iter>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.304920" level="INFO">Clicking link 'Add a car'.</msg>
+<arg>Add a car</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.304747" elapsed="0.096061"/>
+</kw>
+<kw name="Generate Test2 Brand" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:27.401133" level="INFO">${brand} = Skoda</msg>
+<var>${brand}</var>
+<status status="PASS" start="2026-04-28T10:47:27.400979" elapsed="0.000178"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${LIST}</arg>
+<arg>${brand}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.401239" elapsed="0.000151"/>
+</kw>
+<kw name="Generate Test2 Model" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:27.401543" level="INFO">${model} = Kodiaq</msg>
+<var>${model}</var>
+<status status="PASS" start="2026-04-28T10:47:27.401462" elapsed="0.000099"/>
+</kw>
+<kw name="Generate Mileage" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:27.401708" level="INFO">${mileage} = 259069</msg>
+<var>${mileage}</var>
+<status status="PASS" start="2026-04-28T10:47:27.401624" elapsed="0.000101"/>
+</kw>
+<kw name="Generate Year" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:27.401860" level="INFO">${year} = 2025</msg>
+<var>${year}</var>
+<status status="PASS" start="2026-04-28T10:47:27.401786" elapsed="0.000090"/>
+</kw>
+<kw name="Generate Plate" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:27.402025" level="INFO">${plate} = NAB-504</msg>
+<var>${plate}</var>
+<status status="PASS" start="2026-04-28T10:47:27.401941" elapsed="0.000100"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.405040" level="INFO">Typing text 'Skoda' into text field 'make-input'.</msg>
+<arg>make-input</arg>
+<arg>${brand}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.402125" elapsed="0.074720"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.477221" level="INFO">Typing text 'Kodiaq' into text field 'model-input'.</msg>
+<arg>model-input</arg>
+<arg>${model}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.477021" elapsed="0.006469"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.483837" level="INFO">Typing text '259069' into text field 'mileage-input'.</msg>
+<arg>mileage-input</arg>
+<arg>${mileage}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.483644" elapsed="0.005789"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.489763" level="INFO">Typing text '2025' into text field 'year-input'.</msg>
+<arg>year-input</arg>
+<arg>${year}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.489578" elapsed="0.005789"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.495742" level="INFO">Typing text 'NAB-504' into text field 'plate-input'.</msg>
+<arg>plate-input</arg>
+<arg>${plate}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.495532" elapsed="0.006245"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.502104" level="INFO">Clicking button 'Add a new car'.</msg>
+<arg>Add a new car</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.501939" elapsed="0.032581"/>
+</kw>
+<var name="${i}">5</var>
+<status status="PASS" start="2026-04-28T10:47:27.304638" elapsed="0.229967"/>
+</iter>
+<iter>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.535159" level="INFO">Clicking link 'Add a car'.</msg>
+<arg>Add a car</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.534916" elapsed="0.089167"/>
+</kw>
+<kw name="Generate Test2 Brand" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:27.624450" level="INFO">${brand} = Skoda</msg>
+<var>${brand}</var>
+<status status="PASS" start="2026-04-28T10:47:27.624265" elapsed="0.000208"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${LIST}</arg>
+<arg>${brand}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.624555" elapsed="0.000187"/>
+</kw>
+<kw name="Generate Test2 Model" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:27.624943" level="INFO">${model} = A4</msg>
+<var>${model}</var>
+<status status="PASS" start="2026-04-28T10:47:27.624815" elapsed="0.000158"/>
+</kw>
+<kw name="Generate Mileage" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:27.625148" level="INFO">${mileage} = 245816</msg>
+<var>${mileage}</var>
+<status status="PASS" start="2026-04-28T10:47:27.625059" elapsed="0.000106"/>
+</kw>
+<kw name="Generate Year" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:27.625312" level="INFO">${year} = 2005</msg>
+<var>${year}</var>
+<status status="PASS" start="2026-04-28T10:47:27.625233" elapsed="0.000099"/>
+</kw>
+<kw name="Generate Plate" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:27.625522" level="INFO">${plate} = SHV-652</msg>
+<var>${plate}</var>
+<status status="PASS" start="2026-04-28T10:47:27.625417" elapsed="0.000126"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.625792" level="INFO">Typing text 'Skoda' into text field 'make-input'.</msg>
+<arg>make-input</arg>
+<arg>${brand}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.625623" elapsed="0.079203"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.705257" level="INFO">Typing text 'A4' into text field 'model-input'.</msg>
+<arg>model-input</arg>
+<arg>${model}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.705045" elapsed="0.027370"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.732773" level="INFO">Typing text '245816' into text field 'mileage-input'.</msg>
+<arg>mileage-input</arg>
+<arg>${mileage}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.732570" elapsed="0.005984"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.738912" level="INFO">Typing text '2005' into text field 'year-input'.</msg>
+<arg>year-input</arg>
+<arg>${year}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.738708" elapsed="0.005262"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.744350" level="INFO">Typing text 'SHV-652' into text field 'plate-input'.</msg>
+<arg>plate-input</arg>
+<arg>${plate}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.744118" elapsed="0.007082"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.751520" level="INFO">Clicking button 'Add a new car'.</msg>
+<arg>Add a new car</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.751357" elapsed="0.032070"/>
+</kw>
+<var name="${i}">6</var>
+<status status="PASS" start="2026-04-28T10:47:27.534766" elapsed="0.248735"/>
+</iter>
+<iter>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.783971" level="INFO">Clicking link 'Add a car'.</msg>
+<arg>Add a car</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.783773" elapsed="0.097201"/>
+</kw>
+<kw name="Generate Test2 Brand" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:27.881434" level="INFO">${brand} = Skoda</msg>
+<var>${brand}</var>
+<status status="PASS" start="2026-04-28T10:47:27.881224" elapsed="0.000235"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${LIST}</arg>
+<arg>${brand}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.881577" elapsed="0.000311"/>
+</kw>
+<kw name="Generate Test2 Model" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:27.882176" level="INFO">${model} = Octavia</msg>
+<var>${model}</var>
+<status status="PASS" start="2026-04-28T10:47:27.882025" elapsed="0.000172"/>
+</kw>
+<kw name="Generate Mileage" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:27.882378" level="INFO">${mileage} = 225207</msg>
+<var>${mileage}</var>
+<status status="PASS" start="2026-04-28T10:47:27.882269" elapsed="0.000131"/>
+</kw>
+<kw name="Generate Year" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:27.882539" level="INFO">${year} = 2022</msg>
+<var>${year}</var>
+<status status="PASS" start="2026-04-28T10:47:27.882464" elapsed="0.000092"/>
+</kw>
+<kw name="Generate Plate" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:27.882702" level="INFO">${plate} = YPJ-609</msg>
+<var>${plate}</var>
+<status status="PASS" start="2026-04-28T10:47:27.882614" elapsed="0.000105"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.882931" level="INFO">Typing text 'Skoda' into text field 'make-input'.</msg>
+<arg>make-input</arg>
+<arg>${brand}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.882788" elapsed="0.082239"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.965392" level="INFO">Typing text 'Octavia' into text field 'model-input'.</msg>
+<arg>model-input</arg>
+<arg>${model}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.965192" elapsed="0.010159"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.975765" level="INFO">Typing text '225207' into text field 'mileage-input'.</msg>
+<arg>mileage-input</arg>
+<arg>${mileage}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.975546" elapsed="0.006820"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.982732" level="INFO">Typing text '2022' into text field 'year-input'.</msg>
+<arg>year-input</arg>
+<arg>${year}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.982531" elapsed="0.006653"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.989522" level="INFO">Typing text 'YPJ-609' into text field 'plate-input'.</msg>
+<arg>plate-input</arg>
+<arg>${plate}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.989335" elapsed="0.006766"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:27.996477" level="INFO">Clicking button 'Add a new car'.</msg>
+<arg>Add a new car</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:27.996293" elapsed="0.037185"/>
+</kw>
+<var name="${i}">7</var>
+<status status="PASS" start="2026-04-28T10:47:27.783667" elapsed="0.249883"/>
+</iter>
+<iter>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:28.033966" level="INFO">Clicking link 'Add a car'.</msg>
+<arg>Add a car</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.033800" elapsed="0.097809"/>
+</kw>
+<kw name="Generate Test2 Brand" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:28.132037" level="INFO">${brand} = Toyota</msg>
+<var>${brand}</var>
+<status status="PASS" start="2026-04-28T10:47:28.131816" elapsed="0.000260"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${LIST}</arg>
+<arg>${brand}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.132225" elapsed="0.000257"/>
+</kw>
+<kw name="Generate Test2 Model" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:28.132687" level="INFO">${model} = Corolla</msg>
+<var>${model}</var>
+<status status="PASS" start="2026-04-28T10:47:28.132581" elapsed="0.000126"/>
+</kw>
+<kw name="Generate Mileage" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:28.132849" level="INFO">${mileage} = 192418</msg>
+<var>${mileage}</var>
+<status status="PASS" start="2026-04-28T10:47:28.132773" elapsed="0.000093"/>
+</kw>
+<kw name="Generate Year" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:28.133012" level="INFO">${year} = 2005</msg>
+<var>${year}</var>
+<status status="PASS" start="2026-04-28T10:47:28.132940" elapsed="0.000090"/>
+</kw>
+<kw name="Generate Plate" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:28.133160" level="INFO">${plate} = BEV-348</msg>
+<var>${plate}</var>
+<status status="PASS" start="2026-04-28T10:47:28.133086" elapsed="0.000091"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:28.133386" level="INFO">Typing text 'Toyota' into text field 'make-input'.</msg>
+<arg>make-input</arg>
+<arg>${brand}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.133244" elapsed="0.075007"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:28.208624" level="INFO">Typing text 'Corolla' into text field 'model-input'.</msg>
+<arg>model-input</arg>
+<arg>${model}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.208419" elapsed="0.008951"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:28.217722" level="INFO">Typing text '192418' into text field 'mileage-input'.</msg>
+<arg>mileage-input</arg>
+<arg>${mileage}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.217527" elapsed="0.006451"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:28.224327" level="INFO">Typing text '2005' into text field 'year-input'.</msg>
+<arg>year-input</arg>
+<arg>${year}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.224133" elapsed="0.006523"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:28.231078" level="INFO">Typing text 'BEV-348' into text field 'plate-input'.</msg>
+<arg>plate-input</arg>
+<arg>${plate}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.230836" elapsed="0.005992"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:28.237147" level="INFO">Clicking button 'Add a new car'.</msg>
+<arg>Add a new car</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.236991" elapsed="0.035952"/>
+</kw>
+<var name="${i}">8</var>
+<status status="PASS" start="2026-04-28T10:47:28.033698" elapsed="0.239319"/>
+</iter>
+<iter>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:28.273416" level="INFO">Clicking link 'Add a car'.</msg>
+<arg>Add a car</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.273265" elapsed="0.125971"/>
+</kw>
+<kw name="Generate Test2 Brand" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:28.399704" level="INFO">${brand} = Skoda</msg>
+<var>${brand}</var>
+<status status="PASS" start="2026-04-28T10:47:28.399472" elapsed="0.000271"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${LIST}</arg>
+<arg>${brand}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.399875" elapsed="0.000244"/>
+</kw>
+<kw name="Generate Test2 Model" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:28.400374" level="INFO">${model} = Fabia</msg>
+<var>${model}</var>
+<status status="PASS" start="2026-04-28T10:47:28.400241" elapsed="0.000161"/>
+</kw>
+<kw name="Generate Mileage" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:28.400608" level="INFO">${mileage} = 299453</msg>
+<var>${mileage}</var>
+<status status="PASS" start="2026-04-28T10:47:28.400498" elapsed="0.000136"/>
+</kw>
+<kw name="Generate Year" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:28.400831" level="INFO">${year} = 2003</msg>
+<var>${year}</var>
+<status status="PASS" start="2026-04-28T10:47:28.400724" elapsed="0.000131"/>
+</kw>
+<kw name="Generate Plate" owner="RandomLibrary">
+<msg time="2026-04-28T10:47:28.401069" level="INFO">${plate} = YUE-390</msg>
+<var>${plate}</var>
+<status status="PASS" start="2026-04-28T10:47:28.400953" elapsed="0.000154"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:28.401467" level="INFO">Typing text 'Skoda' into text field 'make-input'.</msg>
+<arg>make-input</arg>
+<arg>${brand}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.401242" elapsed="0.056825"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:28.458495" level="INFO">Typing text 'Fabia' into text field 'model-input'.</msg>
+<arg>model-input</arg>
+<arg>${model}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.458237" elapsed="0.007996"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:28.466620" level="INFO">Typing text '299453' into text field 'mileage-input'.</msg>
+<arg>mileage-input</arg>
+<arg>${mileage}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.466392" elapsed="0.005458"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:28.472192" level="INFO">Typing text '2003' into text field 'year-input'.</msg>
+<arg>year-input</arg>
+<arg>${year}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.472005" elapsed="0.005685"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:28.478070" level="INFO">Typing text 'YUE-390' into text field 'plate-input'.</msg>
+<arg>plate-input</arg>
+<arg>${plate}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.477858" elapsed="0.006204"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:28.484426" level="INFO">Clicking button 'Add a new car'.</msg>
+<arg>Add a new car</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.484230" elapsed="0.035467"/>
+</kw>
+<var name="${i}">9</var>
+<status status="PASS" start="2026-04-28T10:47:28.273164" elapsed="0.246615"/>
+</iter>
+<var>${i}</var>
+<value>10</value>
+<status status="PASS" start="2026-04-28T10:47:25.595795" elapsed="2.924031"/>
+</for>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-04-28T10:47:28.520614" level="INFO">@{LIST} = [ Skoda | Toyota | Toyota | Skoda | Audi | Skoda | Skoda | Skoda | Toyota | Skoda ]</msg>
+<arg>@{LIST}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.520118" elapsed="0.000565"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:28.544278" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.520942" elapsed="0.023465"/>
+</kw>
+<status status="PASS" start="2026-04-28T10:47:13.960550" elapsed="14.584128"/>
+</test>
+<test id="s1-t2" name="Test Remove Skodas From List" line="46">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get From List" owner="Collections">
+<msg time="2026-04-28T10:47:28.545919" level="INFO">${brand} = Skoda</msg>
+<var>${brand}</var>
+<arg>${LIST}</arg>
+<arg>${i}</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.545660" elapsed="0.000288"/>
+</kw>
+<if>
+<branch type="IF" condition="'Skoda' in $brand">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-04-28T10:47:28.546665" level="INFO">Removing Skoda at index 9</msg>
+<arg>Removing Skoda at index ${i}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.546325" elapsed="0.000386"/>
+</kw>
+<kw name="Open Context Menu" owner="SeleniumLibrary">
+<msg time="2026-04-28T10:47:28.651643" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-04-28T10:47:28.651815" level="FAIL">Element with locator 'xpath=(//td[contains(@class, 'car-brand')])[10]' not found.</msg>
+<arg>xpath=(//td[contains(@class, 'car-brand')])[${i + 1}]</arg>
+<doc>Opens the context menu on the element identified by ``locator``.</doc>
+<status status="FAIL" start="2026-04-28T10:47:28.546810" elapsed="0.106445">Element with locator 'xpath=(//td[contains(@class, 'car-brand')])[10]' not found.</status>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<arg>ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="NOT RUN" start="2026-04-28T10:47:28.653439" elapsed="0.000030"/>
+</kw>
+<status status="FAIL" start="2026-04-28T10:47:28.546068" elapsed="0.107456">Element with locator 'xpath=(//td[contains(@class, 'car-brand')])[10]' not found.</status>
+</branch>
+<status status="FAIL" start="2026-04-28T10:47:28.546036" elapsed="0.107536">Element with locator 'xpath=(//td[contains(@class, 'car-brand')])[10]' not found.</status>
+</if>
+<var name="${i}">9</var>
+<status status="FAIL" start="2026-04-28T10:47:28.545525" elapsed="0.108094">Element with locator 'xpath=(//td[contains(@class, 'car-brand')])[10]' not found.</status>
+</iter>
+<var>${i}</var>
+<value>9</value>
+<value>-1</value>
+<value>-1</value>
+<status status="FAIL" start="2026-04-28T10:47:28.545268" elapsed="0.108402">Element with locator 'xpath=(//td[contains(@class, 'car-brand')])[10]' not found.</status>
+</for>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-04-28T10:47:28.653837" elapsed="0.000024"/>
+</kw>
+<status status="FAIL" start="2026-04-28T10:47:28.544964" elapsed="0.109056">Element with locator 'xpath=(//td[contains(@class, 'car-brand')])[10]' not found.</status>
+</test>
+<kw name="Stop Container" type="TEARDOWN">
+<kw name="Run Process" owner="Process">
+<msg time="2026-04-28T10:47:28.654965" level="INFO">Starting process:
+docker-compose down</msg>
+<msg time="2026-04-28T10:47:28.655321" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-04-28T10:47:38.963956" level="INFO">Process completed.</msg>
+<arg>docker-compose</arg>
+<arg>down</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-04-28T10:47:28.654633" elapsed="10.309429"/>
+</kw>
+<kw name="Pause Execution" owner="Dialogs">
+<doc>Pauses execution until user clicks ``Ok`` button.</doc>
+<status status="PASS" start="2026-04-28T10:47:38.964213" elapsed="1.854917"/>
+</kw>
+<status status="PASS" start="2026-04-28T10:47:28.654461" elapsed="12.164826"/>
+</kw>
+<doc>Lab 8 part 2</doc>
+<status status="FAIL" start="2026-04-28T10:47:13.663072" elapsed="27.156255"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Part 2" id="s1" pass="1" fail="1" skip="0">Part 2</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-04-28T10:47:24.003324" level="WARN">Problem reading geckodriver versions: error sending request for url (https://raw.githubusercontent.com/SeleniumHQ/selenium/trunk/common/geckodriver/geckodriver-support.json). Using latest geckodriver version</msg>
+<msg time="2026-04-28T10:47:24.003501" level="WARN">Exception managing firefox: error sending request for url (https://github.com/mozilla/geckodriver/releases/latest)</msg>
+</errors>
+</robot>

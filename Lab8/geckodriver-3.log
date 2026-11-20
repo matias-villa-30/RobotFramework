@@ -1,0 +1,19 @@
+1777362373816	geckodriver	INFO	Listening on 127.0.0.1:52065
+1777362373844	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/usr/bin/firefox" "--m ... te" "--remote-debugging-port" "39407" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilevclmbw"
+Gtk-Message: 10:46:13.885: Failed to load module "window-decorations-gtk-module"
+Gtk-Message: 10:46:13.885: Failed to load module "colorreload-gtk-module"
+1777362374142	Marionette	INFO	Marionette enabled
+1777362374230	Marionette	INFO	Listening on port 44181
+WebDriver BiDi listening on ws://127.0.0.1:39407
+Read port: 44181
+1777362374301	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: "Experiment desktop-release-rollout-show-relay-to-all-browsers-next-sign-up-modal-cta has unknown featureId: email-autocomplete-relay"
+console.error: "Experiment visual-card-updates has unknown featureId: newtabRefinedCardsLayout"
+console.error: (new InvalidStateError("JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment", (void 0), 603))
+console.error: (new InvalidStateError("JSWindowActorChild.sendAsyncMessage: JSWindowActorChild cannot send at the moment", (void 0), 620))
+[WARN  glean_core] Shutdown called before Glean is initialized. Waiting.
+[WARN  glean_core::upload] Attempted to enqueue a duplicate ping 8ef75523-d1cf-405c-a5ae-baf235fed5ef at /submit/firefox-crashreporter/deletion-request/1/8ef75523-d1cf-405c-a5ae-baf235fed5ef.
+1777362431357	Marionette	INFO	Stopped listening on port 44181
+JavaScript error: resource://gre/modules/PrivateBrowsingUtils.sys.mjs, line 19: TypeError: can't access property "isChromeWindow", aWindow is null
+console.warn: TopSitesFeed: Failed to fetch data from MARS server: NetworkError when attempting to fetch resource.
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1128: Error: Connection is not open.

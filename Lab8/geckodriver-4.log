@@ -1,0 +1,15 @@
+1777362444005	geckodriver	INFO	Listening on 127.0.0.1:37647
+1777362444035	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" "/usr/bin/firefox" "--m ... te" "--remote-debugging-port" "52077" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilef9A1K9"
+Gtk-Message: 10:47:24.074: Failed to load module "window-decorations-gtk-module"
+Gtk-Message: 10:47:24.075: Failed to load module "colorreload-gtk-module"
+1777362444329	Marionette	INFO	Marionette enabled
+1777362444417	Marionette	INFO	Listening on port 36203
+WebDriver BiDi listening on ws://127.0.0.1:52077
+Read port: 36203
+1777362444492	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: "Experiment desktop-release-rollout-show-relay-to-all-browsers-next-sign-up-modal-cta has unknown featureId: email-autocomplete-relay"
+console.error: "Experiment visual-card-updates has unknown featureId: newtabRefinedCardsLayout"
+1777362456439	Marionette	INFO	Stopped listening on port 36203
+JavaScript error: resource://gre/modules/PrivateBrowsingUtils.sys.mjs, line 19: TypeError: can't access property "isChromeWindow", aWindow is null
+console.warn: TopSitesFeed: Failed to fetch data from MARS server: NetworkError when attempting to fetch resource.
+JavaScript error: resource://gre/modules/Sqlite.sys.mjs, line 1128: Error: Connection is not open.

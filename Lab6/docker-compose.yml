@@ -1,0 +1,29 @@
+# This compose file uses bind mounted volumes
+# If the volumes don't exist when 'docker-compose up' is executed
+# the volumes are created. 
+# Bind mounting mounts a directory from the local machine to a docker volume
+# so a new volume is not created but the local directory is used.
+
+# You can detach from the containers by starting them with 'docker-compose up --detach'
+
+# command: overrides default command set in Dockerfile. 
+# We use it to execute build commands. The container terminates automatically when 
+# command ends.
+
+services:
+    pico:
+        build:
+            context: .
+        hostname: pico-build
+        volumes:
+        - .:/home/build
+        command:
+            sh -c 'cd /home/build && 
+            rm -rf cmake-build-debug && 
+            mkdir -p cmake-build-debug && 
+            cd cmake-build-debug && 
+            cmake .. && 
+            make'
+    
+
+        
